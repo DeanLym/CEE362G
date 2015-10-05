@@ -8,11 +8,12 @@ n=400;
 t = linspace(-pi/2,pi/2,n);
 H = shaw(n);
 X = ones(n,1);
+%% case 1
 R = eye(n);
 Q = eye(n);
 [s,V,LAMBDA,MU] = GenLinInv(y,H,R,X,Q);
 plotresult(t,s,s_true,61);
-
+%% case 2
 
 
 end
@@ -25,5 +26,5 @@ hold on;
 plot(t,s,'bo');
 plot(t,s_true,'r-','linewidth',2);
 
-
 end
+
