@@ -30,11 +30,16 @@ end
 
 function Q=linearQ(n,x)
 Q=zeros(n);
-for (i=1:n)
-    for (j=1:n)
-    Q(i,j)=abs(x(i)-x(j));
-    end
+h=abs(repmat(x,n,1)-repmat(x',1,n));
+Q=1./h;
 end
+
+function Q=gaussianQ(n,x)
+Q=zeros(n);
+sigma=1;
+L=1;
+h=abs(repmat(x,n,1)-repmat(x',1,n));
+Q=sigma^2*exp(-h.^2/L^2);
 end
 
 
