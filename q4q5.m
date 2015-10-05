@@ -64,7 +64,7 @@ plot(t,s_hat_noise,'bo','linewidth',2);
 plot(t,s,'r','linewidth',2);
 legend({'$\hat{s}$(t)','s(t)'})
 set(legend,'Interpreter','latex');
-title('v~N(0,1e-12)','fontsize',18);
+title('v~N(0,5e-11)','fontsize',18);
 xlabel('t','fontsize',18);
 ylabel('s','fontsize',18);
 
