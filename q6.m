@@ -35,3 +35,13 @@ h = abs(repmat(t,1,n) - repmat(t',n,1));
 Q = v*exp(-h/l);
 end
 
+
+function Q=linearQ(n,x)
+Q=zeros(n);
+for (i=1:n)
+    for (j=1:n)
+    Q(i,j)=abs(x(i)-x(j));
+    end
+end
+end
+

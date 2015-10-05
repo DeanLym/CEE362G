@@ -8,13 +8,19 @@ n=400;
 t = linspace(-pi/2,pi/2,n);
 H = shaw(n);
 X = ones(n,1);
+<<<<<<< HEAD
 %% case 1
+=======
+>>>>>>> f9c1eaa6722c824c6d18869902a4c6c3f5f0f8ac
 R = eye(n);
 Q = eye(n);
 [s,V,LAMBDA,MU] = GenLinInv(y,H,R,X,Q);
 plotresult(t,s,s_true,61);
+<<<<<<< HEAD
 %% case 2
 
+=======
+>>>>>>> f9c1eaa6722c824c6d18869902a4c6c3f5f0f8ac
 
 
 
@@ -28,6 +34,7 @@ hold on;
 plot(t,s,'bo');
 plot(t,s_true,'r-','linewidth',2);
 
+<<<<<<< HEAD
 end
 
 function Q = ExponentialCov(t,n,l,v)
@@ -36,3 +43,13 @@ Q = v*exp(-h/l);
 
 end
 
+=======
+
+end
+
+function [Q]=linearQ(n,x)
+Q=zeros(n);
+for (i=1:n)
+    for (j=1:)
+    Q()
+>>>>>>> f9c1eaa6722c824c6d18869902a4c6c3f5f0f8ac
