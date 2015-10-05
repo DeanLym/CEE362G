@@ -1,50 +1,105 @@
 function [] = q1()
 n = 100;
-[A,b,x] = shaw(100);
-%% Example 1 from shaw.m
+H = shaw(n);
+t = linspace(-pi/2,pi/2,n)';
+%% Example 1 linear
+s = t;
+y = H*s;
+%
 figure(1);
 subplot(1,4,[1,2]);
 hold on;
-plot(1:n',b);
-plot(1:n',x,'r');
+plot(t,y);
+plot(t,s,'r');
+legend('y(t)','s(t)');
+xlabel('t');
+ylabel('s(t) or y(t)');
+title('s(t)=t');
+%
 subplot(1,4,3);
-imagesc(x);
+imagesc(s);
 colorbar;
-caxis([0 4]);
+caxis([0 2]);
+set(gca, 'XTick', []);
+%
 subplot(1,4,4);
-imagesc(b);
+imagesc(y);
 colorbar;
-caxis([0 4]);
-%% Example 2 linear image
-x = linspace(0,1,n)';
-b = A*x;
+caxis([0 2]);
+set(gca, 'XTick', []);
+%% Example 2 random
+s = rand(1,n)';
+y = H*s;
+%
 figure(2);
 subplot(1,4,[1,2]);
 hold on;
-plot(1:n',b);
-plot(1:n',x,'r');
+plot(t,y);
+plot(t,s,'r');
+legend('y(t)','s(t)');
+xlabel('t');
+ylabel('s(t) or y(t)');
+title('s(t)=t');
+%
 subplot(1,4,3);
-imagesc(x);
+imagesc(s);
 colorbar;
 caxis([0 2.5]);
+set(gca, 'XTick', []);
+%
 subplot(1,4,4);
-imagesc(b);
+imagesc(y);
 colorbar;
 caxis([0 2.5]);
-%% Example 3 random image
-x = rand(1,n)';
-b = A*x;
+set(gca, 'XTick', []);
+%% Example 3 sin
+s = sin(2*t);
+y = H*s;
+%
 figure(3);
 subplot(1,4,[1,2]);
 hold on;
-plot(1:n',b);
-plot(1:n',x,'r');
+plot(t,y);
+plot(t,s,'r');
+legend('y(t)','s(t)');
+xlabel('t');
+ylabel('s(t) or y(t)');
+title('s(t)=sin(2t)');
+%
 subplot(1,4,3);
-imagesc(x);
+imagesc(s);
 colorbar;
 caxis([0 2.5]);
+set(gca, 'XTick', []);
+%
 subplot(1,4,4);
-imagesc(b);
+imagesc(y);
 colorbar;
 caxis([0 2.5]);
+set(gca, 'XTick', []);
+%% Example 4 cos
+s = -sin(t*2);
+y = H*s;
+%
+figure(4);
+subplot(1,4,[1,2]);
+hold on;
+plot(t,y);
+plot(t,s,'r');
+legend('y(t)','s(t)');
+xlabel('t');
+ylabel('s(t) or y(t)');
+title('s(t)=-sin(t)');
+%
+subplot(1,4,3);
+imagesc(s);
+colorbar;
+caxis([0 2.5]);
+set(gca, 'XTick', []);
+%
+subplot(1,4,4);
+imagesc(y);
+colorbar;
+caxis([0 2.5]);
+set(gca, 'XTick', []);
 end
