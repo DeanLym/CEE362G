@@ -6,7 +6,7 @@ t = linspace(-pi/2,pi/2,n)';
 s = t;
 y = H*s;
 %
-figure(1);
+figure(11);
 subplot(1,4,[1,2]);
 hold on;
 plot(t,y);
@@ -31,7 +31,7 @@ set(gca, 'XTick', []);
 s = rand(1,n)';
 y = H*s;
 %
-figure(2);
+figure(12);
 subplot(1,4,[1,2]);
 hold on;
 plot(t,y);
@@ -56,7 +56,7 @@ set(gca, 'XTick', []);
 s = sin(2*t);
 y = H*s;
 %
-figure(3);
+figure(13);
 subplot(1,4,[1,2]);
 hold on;
 plot(t,y);
@@ -78,7 +78,7 @@ colorbar;
 caxis([0 2.5]);
 set(gca, 'XTick', []);
 %% Example 4 cos
-s = -sin(t*2);
+s = cos(t);
 y = H*s;
 %
 figure(4);
@@ -89,7 +89,7 @@ plot(t,s,'r');
 legend('y(t)','s(t)');
 xlabel('t');
 ylabel('s(t) or y(t)');
-title('s(t)=-sin(t)');
+title('s(t)=-cos(t)');
 %
 subplot(1,4,3);
 imagesc(s);
