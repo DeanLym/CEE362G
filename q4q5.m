@@ -18,10 +18,55 @@ v = normrnd(0,1e-12,n,1);
 y_noise = H*s + v;
 s_hat_noise = pinv(H)*y_noise;
 figure(41);
-plot(t,s,'r','linewidth',2);
+subplot(2,2,1);
+hold on;
+
 plot(t,s_hat_noise,'bo','linewidth',2);
-legend({'s(t)','$\hat{s}$(t)'})
-set(legend,'Interpreter','latex')
+plot(t,s,'r','linewidth',2);
+legend({'$\hat{s}$(t)','s(t)'})
+set(legend,'Interpreter','latex');
+title('v~N(0,1e-12)','fontsize',18);
 xlabel('t','fontsize',18);
 ylabel('s','fontsize',18);
+%
+v = normrnd(0,5e-12,n,1);
+y_noise = H*s + v;
+s_hat_noise = pinv(H)*y_noise;
+subplot(2,2,2);
+hold on;
+plot(t,s_hat_noise,'bo','linewidth',2);
+plot(t,s,'r','linewidth',2);
+legend({'$\hat{s}$(t)','s(t)'})
+set(legend,'Interpreter','latex');
+title('v~N(0,5e-12)','fontsize',18);
+xlabel('t','fontsize',18);
+ylabel('s','fontsize',18);
+%
+v = normrnd(0,1e-11,n,1);
+y_noise = H*s + v;
+s_hat_noise = pinv(H)*y_noise;
+subplot(2,2,3);
+hold on;
+plot(t,s_hat_noise,'bo','linewidth',2);
+plot(t,s,'r','linewidth',2);
+legend({'$\hat{s}$(t)','s(t)'});
+set(legend,'Interpreter','latex');
+title('v~N(0,1e-11)','fontsize',18);
+xlabel('t','fontsize',18);
+ylabel('s','fontsize',18);
+%
+v = normrnd(0,5e-11,n,1);
+y_noise = H*s + v;
+s_hat_noise = pinv(H)*y_noise;
+subplot(2,2,4);
+hold on;
+plot(t,s_hat_noise,'bo','linewidth',2);
+plot(t,s,'r','linewidth',2);
+legend({'$\hat{s}$(t)','s(t)'})
+set(legend,'Interpreter','latex');
+title('v~N(0,1e-12)','fontsize',18);
+xlabel('t','fontsize',18);
+ylabel('s','fontsize',18);
+
+
 end
