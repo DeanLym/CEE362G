@@ -4,7 +4,7 @@ t = data(:,1);
 y = data(:,2);
 % plot(s_true);
 n=400;
-std_v = 0.1;
+std_v = 0.5;
 var_s = var(y);
 ind = 20;
 l_s = pi/2;
@@ -60,6 +60,37 @@ plot(t,H*s4,'m');
 plot(t,y,'--');
 legend('Nugget','Linear','Exponential','Gaussian','y');
 %% Question 7
+nr=10;
+s_c = zeros(n,nr);
+figure(65+ind);
+hold on;
+Q = ExponentialCov(n,t,var_s,l_s);
+% Q = gaussianQ(n,t,var_s,l_s);
+lamda = lamda3;
+for i=1:nr
+v_u = simv(R);
+s_u = simv(Q,X);
+s_c(:,i) = s_u + lamda*(y+v_u-H*s_u);
+subplot(2,5,i);
+hold on;
+plot(t,s_c(:,i));
+plot(t,s3,'r');
+ylim([-3,3]);
+end
+
+figure(66+ind);
+hold on;
+for i=1:nr
+
+subplot(2,5,i);
+hold on;
+plot(t,H*s_c(:,i));
+plot(t,y,'r');
+% ylim([-3,3]);
+end
+
+
+
 
 
 
