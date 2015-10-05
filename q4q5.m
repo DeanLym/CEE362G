@@ -10,7 +10,7 @@ hold on;
 plot(t,s,'r','linewidth',2);
 plot(t,s_hat,'bo','linewidth',2);
 legend({'s(t)','$\hat{s}$(t)'})
-set(legend,'Interpreter','latex')
+set(legend,'Interpreter','latex','fontsize',14)
 xlabel('t','fontsize',18);
 ylabel('s','fontsize',18);
 %%
@@ -24,7 +24,7 @@ hold on;
 plot(t,s_hat_noise,'bo','linewidth',2);
 plot(t,s,'r','linewidth',2);
 legend({'$\hat{s}$(t)','s(t)'})
-set(legend,'Interpreter','latex');
+set(legend,'Interpreter','latex','fontsize',14);
 title('v~N(0,1e-12)','fontsize',18);
 xlabel('t','fontsize',18);
 ylabel('s','fontsize',18);
@@ -37,7 +37,7 @@ hold on;
 plot(t,s_hat_noise,'bo','linewidth',2);
 plot(t,s,'r','linewidth',2);
 legend({'$\hat{s}$(t)','s(t)'})
-set(legend,'Interpreter','latex');
+set(legend,'Interpreter','latex','fontsize',14);
 title('v~N(0,5e-12)','fontsize',18);
 xlabel('t','fontsize',18);
 ylabel('s','fontsize',18);
@@ -50,7 +50,7 @@ hold on;
 plot(t,s_hat_noise,'bo','linewidth',2);
 plot(t,s,'r','linewidth',2);
 legend({'$\hat{s}$(t)','s(t)'});
-set(legend,'Interpreter','latex');
+set(legend,'Interpreter','latex','fontsize',14);
 title('v~N(0,1e-11)','fontsize',18);
 xlabel('t','fontsize',18);
 ylabel('s','fontsize',18);
@@ -63,7 +63,7 @@ hold on;
 plot(t,s_hat_noise,'bo','linewidth',2);
 plot(t,s,'r','linewidth',2);
 legend({'$\hat{s}$(t)','s(t)'})
-set(legend,'Interpreter','latex');
+set(legend,'Interpreter','latex','fontsize',14);
 title('v~N(0,5e-11)','fontsize',18);
 xlabel('t','fontsize',18);
 ylabel('s','fontsize',18);
