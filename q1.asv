@@ -1,0 +1,73 @@
+function [] = q1()
+n = 100;
+H = shaw(n);
+t = linspace(-pi/2,pi/2,n)';
+%% Example 1 from shaw.m
+figure(1);
+subplot(1,4,[1,2]);
+hold on;
+s = t;
+y = 
+plot(t,y);
+plot(t,s,'r');
+subplot(1,4,3);
+imagesc(x);
+colorbar;
+caxis([0 4]);
+subplot(1,4,4);
+imagesc(b);
+colorbar;
+caxis([0 4]);
+%% Example 2 linear image
+x = linspace(0,1,n)';
+b = A*x;
+figure(2);
+subplot(1,4,[1,2]);
+hold on;
+plot(1:n',b);
+plot(1:n',x,'r');
+legend('Blurred','True');
+xlabel('Index');
+ylabel('Value');
+Title('s(t)=');
+subplot(1,4,3);
+imagesc(x);
+colorbar;
+caxis([0 2.5]);
+subplot(1,4,4);
+imagesc(b);
+colorbar;
+caxis([0 2.5]);
+%% Example 3 random image
+x = rand(1,n)';
+b = A*x;
+figure(3);
+subplot(1,4,[1,2]);
+hold on;
+plot(1:n',b);
+plot(1:n',x,'r');
+subplot(1,4,3);
+imagesc(x);
+colorbar;
+caxis([0 2.5]);
+subplot(1,4,4);
+imagesc(b);
+colorbar;
+caxis([0 2.5]);
+%% Example 4 sin curve
+x = sin(linspace(0,pi,n))';
+b = A*x;
+figure(4);
+subplot(1,4,[1,2]);
+hold on;
+plot(1:n',b);
+plot(1:n',x,'r');
+subplot(1,4,3);
+imagesc(x);
+colorbar;
+caxis([0 2.5]);
+subplot(1,4,4);
+imagesc(b);
+colorbar;
+caxis([0 2.5]);
+end

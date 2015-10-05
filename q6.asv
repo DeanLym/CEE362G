@@ -33,5 +33,6 @@ end
 function Q = ExponentialCov(t,n,l,v)
 h = abs(repmat(t,1,n) - repmat(t',n,1));
 Q = v*exp(-h/l);
+
 end
 
