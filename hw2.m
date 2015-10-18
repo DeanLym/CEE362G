@@ -17,16 +17,22 @@ spec1 = diag(spec1);
 spec2 = diag(spec2);
 spec3 = diag(spec3);
 
-figure(21);
+figure(22);
 subplot(1,3,1);
 plot((1:N_1)',log(spec1));
-
+title('N = 20');
+xlabel('k');
+ylabel('log of spectrum');
 subplot(1,3,2);
 plot((1:N_2)',log(spec2));
-
+title('N = 200');
+xlabel('k');
+ylabel('log of spectrum');
 subplot(1,3,3);
 plot((1:N_3)',log(spec3));
-
+title('N = 2000');
+xlabel('k');
+ylabel('log of spectrum');
 
 spec1=eig(H1);
 spec2=eig(H2);

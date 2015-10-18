@@ -9,7 +9,7 @@ std_v = 0.1;
 var_s = var(y);
 % var_s = 1e-6;
 ind = 20;
-l_s = pi/2;
+l_s = pi*5;
 H = shaw(n); 
 X = ones(n,1);
 %% case 1 Nugget Effect
@@ -87,10 +87,10 @@ figure(65+ind);
 hold on;
 Q = ExponentialCov(n,t,var_s,l_s);
 % Q = gaussianQ(n,t,var_s,l_s);
-lamda = lamda3;
+lamda = lamda4;
 for i=1:nr
 v_u = simv(R);
-s_u = simv(Q,X);
+s_u = simvm2(1,Q,X);
 s_c(:,i) = s_u + lamda*(y+v_u-H*s_u);
 subplot(2,5,i);
 hold on;
@@ -98,7 +98,6 @@ plot(t,s_c(:,i));
 plot(t,s3,'r');
 ylim([-3,3]);
 end
-
 
 figure(66+ind);
 hold on;
